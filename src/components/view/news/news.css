@@ -1,7 +1,12 @@
+.news {
+    overflow: auto;
+    height: 500px;
+}
+
 .news__item {
     display: flex;
     flex-direction: column;
-    margin: 1rem auto;
+    height: 500px;
     margin-bottom: 1.6%;
     background: #fff;
     color: #333;
@@ -9,6 +14,23 @@
     font-family: Arial, sans-serif;
     border-radius: 5px;
     overflow: hidden;
+}
+
+.news__description-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+}
+
+.news__description-source {
+    font-size: 2rem;
+}
+
+.news__description-content {
+    font-size: 1.5rem;
+}
+
+.news__read-more {
+    font-size: 1.5rem;
 }
 
 .news__item:hover .news__meta-photo {

@@ -1,11 +1,11 @@
 body {
     color: #fff;
-    background: #17181c;
+    background: #222;
     font-family: sans-serif;
 }
 
 header {
-    padding: 10px 30px;
+    padding: 0 30px;
 }
 
 header h1 {
@@ -13,11 +13,18 @@ header h1 {
     font-weight: 800;
 }
 
+main {
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
 footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    padding: 10px 30px;
 }
 footer .copyright {
     font-size: 14px;
@@ -32,4 +39,117 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+
+.git {
+    font-size: 36px;
+    line-height: 1.5;
+    text-decoration: none;
+    color: #A3A3A3;
+}
+
+.rss {
+    width: 150px;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .source__item {
+        padding: 1em;
+    }
+
+    .sources {
+        overflow-x: hidden;
+    }
+
+    .news__item {
+        max-width: 600px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sources {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .source__item {
+        padding: 1em;
+    }
+
+    .news {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 571px) and (max-width: 767px){
+    main {
+        flex-direction: column;
+    }
+
+    .sources {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .source__item {
+        padding: 1em;
+    }
+
+    .news {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 570px){
+    header {
+        padding: 0;
+    }
+
+    main {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .sources {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+    }
+
+    .source__item {
+        padding: 1em;
+    }
+
+    .news {
+        margin-top: 20px;
+    }
+
+    footer {
+        padding: 0;
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+    .news__description-title {
+        font-size: 1.2rem;
+    }
+
+    .news__description-source {
+        font-size: 0.8rem;
+    }
+
+    .news__description-content {
+        font-size: 0.9rem;
+    }
+
+    .news__read-more {
+        font-size: 1rem;
+    }
 }
