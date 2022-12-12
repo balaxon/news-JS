@@ -24,7 +24,7 @@ class News {
         const fragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-        news.forEach((item, idx) => {
+        news.forEach((item, idx: number) => {
             const newsClone = <HTMLElement>newsItemTemp.content.cloneNode(true);
 
             if (idx % 2) newsClone.querySelector('.news__item')!.classList.add('alt');

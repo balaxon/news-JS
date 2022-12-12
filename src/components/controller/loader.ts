@@ -24,9 +24,14 @@ interface urlOptions {
     [index: string]: string;
 }
 
+enum er {
+    errsite = 401,
+    notfound = 404,
+}
+
 class Loader {
-    private baseLink: string;
-    private options: object;
+    private readonly baseLink: string;
+    public options: object;
 
     constructor(baseLink: string, options: object) {
         this.baseLink = baseLink;
@@ -55,9 +60,9 @@ class Loader {
         this.loadnews({ method, endpoint, callback, options });
     }
 
-    errorHandler(res: Response) {
+    errorHandler<Type>(res: Response): Response {
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === er.errsite || res.status === er.notfound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
@@ -65,7 +70,7 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: object, endpoint: string) {
+    makeUrl(options: object | null, endpoint: string) {
         const urlOptions: urlOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
